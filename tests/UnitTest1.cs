@@ -14,7 +14,7 @@ namespace tests
         [Fact]
         public void Test2()
         {
-            Assert.Equal(4, Add(2,3));
+            Assert.Equal(4, Add(1,3));
         }
 
         int Add(int x, int y)
