@@ -11,6 +11,8 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  azureSubscription: 'slippers-test'
+  appName: 'PipelinesDotnetCore'
 
 steps:
 - task: DotNetCoreCLI@2
@@ -46,6 +48,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy Web App'
   inputs:
-    azureSubscription: '01868dd3-0355-4aee-bb90-094f96e796d4'
-    appName: 'PipelinesDotnetCore'
-    package: $(System.DefaultWorkingDirectory)/**/*.zip
+    azureSubscription: $(azureSubscription)
+    appType: webAppLinux
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip
