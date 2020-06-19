@@ -43,3 +43,9 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'sampleNetCoreApp'
+- task: AzureWebApp@1
+  displayName: 'Deploy Web App'
+  inputs:
+    azureSubscription: '01868dd3-0355-4aee-bb90-094f96e796d4'
+    appName: 'PipelinesDotnetCore'
+    package: $(System.DefaultWorkingDirectory)/**/*.zip
