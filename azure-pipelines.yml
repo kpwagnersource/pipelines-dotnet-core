@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  azureSubscription: 'slippers-test'
+  azureSubscription: 'PipelinesDotnetCore'
   appName: 'PipelinesDotnetCore'
 
 steps:
